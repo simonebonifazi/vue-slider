@@ -62,16 +62,13 @@ const app = new Vue({
     },
     methods: {
         goToNextOnLoop() {
-            this.currentIndex++
-            if (this.currentIndex === this.cards.length) {
-                this.currentIndex = 0
-            }
+            this.currentIndex++;
+            if (this.currentIndex === this.cards.length) this.currentIndex = 0;
         },
         goToLeftOnLoop() {
-            this.currentIndex--
-            if (this.currentIndex < 0) {
-                this.currentIndex = this.cards.length - 1
-            }
+            this.currentIndex--;
+            if (this.currentIndex < 0) this.currentIndex = this.cards.length - 1;
         },
+
     }
 })
