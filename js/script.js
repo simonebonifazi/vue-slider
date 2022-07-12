@@ -20,6 +20,7 @@ Consigli del giorno:
 const app = new Vue({
     el: '#root',
     data: {
+        currentIndex: 0,
         cards: [
             {
                 url: 'http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg',

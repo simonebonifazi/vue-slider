@@ -27,8 +27,10 @@
             <div class="col d-flex justify-content-center my-5">
                 <i id="prev" class="fa-solid fa-circle-arrow-left"></i>
                 <ul id="carousel-list">
-                    <li v-for="card in cards">
-                        <figure class="active">
+                    <li v-for="(card, index) in cards">
+                        <figure :class="{'active' : currentIndex === index}">
+                            <!-- class="currentIndex === index ? 'active' : '' 
+                                questa scrittura del ternario per determinare il 'nome' da attribuire alla classe secondo le casistiche, diventa: (rigo sopra)" che significa: se questa condizione è vera, metti la classe, altrimenti nulla! importante da utilizzare solo se la seconda alternativa è una classe vuota -->
                             <img :src=card.url :alt=card.title>
                             <figcaption>
                                 <h3> {{card.title}}</h3>
@@ -44,8 +46,8 @@
         <div class="row">
             <div class="col">
                 <ul class="thumbnails-list d-flex justify-content-between mb-5">
-                    <li v-for="card in cards">
-                        <img :src=card.url :alt=card.title class="active">
+                    <li v-for="(card, index) in cards">
+                        <img :src=card.url :alt=card.title :class="{'active' : currentIndex === index}">
                     </li>
                 </ul>
             </div>
